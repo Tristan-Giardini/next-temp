@@ -1,5 +1,6 @@
-import { getPainting } from "@/sanity/sanity-utils";
+import { getCollection } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
+import Image from "next/image";
 
 type Props = {
   params: { collection: string };
@@ -10,13 +11,21 @@ export default async function Collection({ params }: Props) {
 
   console.log("params", slug);
 
-  const painting = await getPainting(slug);
+  const collection = await getCollection(slug);
+
+  console.log("collection", collection);
 
   return (
     <div>
-      {painting.name}
+      {collection.name}
+      {collection.works.map((work, index) => (
+        <div key={index}>
+          <Image src={work.asset} alt={work.alt} width={800} height={600} />
+          <p dangerouslySetInnerHTML={{ __html: work.description }} />
+        </div>
+      ))}
       <div>
-        <PortableText value={painting.description} />
+        <PortableText value={collection.description} />
       </div>
     </div>
   );
