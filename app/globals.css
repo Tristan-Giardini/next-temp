@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+.fancybox__toolbar__column.is-left {
+  display: none;
+}
+
+div.fancybox__toolbar__column.is-right > :nth-child(-n + 4) {
+  display: none;
+}
+
+.fancybox__footer {
+  display: none;
+}
