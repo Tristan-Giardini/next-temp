@@ -2,6 +2,7 @@ import { getCollection } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
 import Fancybox from "@/app/components/Fancybox";
+import ScrollToTop from "@/app/components/ScrollToTop";
 
 type Props = {
   params: { collection: string };
@@ -9,16 +10,10 @@ type Props = {
 
 export default async function Collection({ params }: Props) {
   const slug = params.collection;
-
-  console.log("params", slug);
-
   const collection = await getCollection(slug);
 
-  console.log("collection", collection);
-
   return (
-    <div>
-      {collection.name}
+    <div className="flex flex-col items-center gap-10">
       <Fancybox
         options={{
           Carousel: {
@@ -30,28 +25,37 @@ export default async function Collection({ params }: Props) {
           },
         }}
       >
-        {collection.works.map((work, index) => {
-          return (
-            <a
-              key={index}
-              data-fancybox="gallery"
-              data-caption={`<i>${work.alt}</i>, ${work.description}`}
-              href={work.asset}
-            >
-              <Image src={work.asset} alt={work.alt} width={800} height={600} />
-            </a>
-          );
-        })}
-      </Fancybox>
-      {/* {collection.works.map((work, index) => (
-        <div key={index}>
-          <Image src={work.asset} alt={work.alt} width={800} height={600} />
-          <p dangerouslySetInnerHTML={{ __html: work.description }} />
+        <div className="flex flex-col items-center gap-10 sm:flex-row sm:flex-wrap sm:align-center max-width-[900px]">
+          {collection.works.map((work, index) => {
+            return (
+              <a
+                key={index}
+                data-fancybox="gallery"
+                data-caption={`<i>${work.alt}</i>, ${work.description}`}
+                href={work.asset}
+              >
+                <Image
+                  src={work.asset}
+                  alt={work.alt}
+                  width={800}
+                  height={600}
+                  className="carousel-image"
+                />
+              </a>
+            );
+          })}
         </div>
-      ))} */}
-      <div>
-        <PortableText value={collection.description} />
-      </div>
+      </Fancybox>
+      {collection.description && (
+        <div className="flex flex-col gap-8 px-5">
+          <PortableText value={collection.description} />
+        </div>
+      )}
+      {collection.arrow && (
+        <div className="sm:hidden">
+          <ScrollToTop />
+        </div>
+      )}
     </div>
   );
 }

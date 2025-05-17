@@ -11,3 +11,13 @@ div.fancybox__toolbar__column.is-right > :nth-child(-n + 4) {
 .fancybox__footer {
   display: none;
 }
+
+.carousel-image {
+  width: 200px !important;
+}
+
+@media screen and (max-width: 640px) {
+  .carousel-image {
+    width: 100% !important;
+  }
+}

@@ -11,4 +11,5 @@ export type Collection = {
     description: string;
   }>;
   description: PortableTextBlock[];
+  arrow: boolean;
 };

@@ -5,10 +5,8 @@ export default async function About() {
   const about = await getAbout();
 
   return (
-    <div>
-      <div>
-        <PortableText value={about.description} />
-      </div>
+    <div className="flex px-5">
+      <PortableText value={about.description} />
     </div>
   );
 }

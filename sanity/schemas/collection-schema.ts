@@ -36,6 +36,11 @@ const collection = {
       type: "array",
       of: [{ type: "block" }],
     },
+    {
+      name: "arrow",
+      title: "Show scroll to top arrow on mobile?",
+      type: "boolean",
+    },
   ],
 };
 

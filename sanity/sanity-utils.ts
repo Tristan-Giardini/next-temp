@@ -96,7 +96,8 @@ export async function getCollection(slug: string): Promise<Collection> {
                 "description": asset->description,
                 "alt": asset->title
           },
-          description
+          description,
+          arrow
       }`,
     { slug }
   );
