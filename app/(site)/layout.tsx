@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import Link from "next/link";
 import Nav from "../components/Nav";
 
 const geistSans = Geist({
@@ -27,10 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased p-8`}
       >
         <header>
-          <Link href="/">Rebecca Storm</Link>
           <Nav />
         </header>
         <main></main>
