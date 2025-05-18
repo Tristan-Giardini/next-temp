@@ -5,7 +5,7 @@ import Fancybox from "@/app/components/Fancybox";
 import ScrollToTop from "@/app/components/ScrollToTop";
 
 type Props = {
-  params: { collection: string };
+  params: <Promise{ collection: string }>;
 };
 
 export default async function Collection({ params }: Props) {
