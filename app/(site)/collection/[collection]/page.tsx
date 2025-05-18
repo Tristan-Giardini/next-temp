@@ -7,7 +7,7 @@ import ScrollToTop from "@/app/components/ScrollToTop";
 export default async function Collection({
   params,
 }: {
-  params: { collection: string };
+  params: { [key: string]: string };
 }) {
   const collection = await getCollection(params.collection);
 
