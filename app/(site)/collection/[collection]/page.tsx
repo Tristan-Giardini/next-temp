@@ -4,11 +4,11 @@ import Image from "next/image";
 import Fancybox from "@/app/components/Fancybox";
 import ScrollToTop from "@/app/components/ScrollToTop";
 
-type Props = {
+export default async function Collection({
+  params,
+}: {
   params: { collection: string };
-};
-
-export default async function Collection({ params }: Props) {
+}) {
   const slug = params.collection;
   const collection = await getCollection(slug);
 
