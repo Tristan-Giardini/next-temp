@@ -68,7 +68,7 @@ export default function Nav() {
   return (
     <nav className="relative h-[20vh] sm:flex sm:flex-col sm:gap-6">
       <div className="flex justify-between items-center min-w-[240px]">
-        <Link href="/" className="bold">
+        <Link href="/" className="font-bold">
           Rebecca Storm
         </Link>
         <button

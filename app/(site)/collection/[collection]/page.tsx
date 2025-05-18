@@ -47,7 +47,7 @@ export default async function Collection({ params }: Props) {
         </div>
       </Fancybox>
       {collection.description && (
-        <div className="flex flex-col gap-8 px-5">
+        <div className="flex flex-col gap-8 px-5 sm:px-0  xl:pr-29">
           <PortableText value={collection.description} />
         </div>
       )}

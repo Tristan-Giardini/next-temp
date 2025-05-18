@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex sm:flex-row flex-col sm:gap-9 antialiased p-8 sm:p-14`}
+        className={`${geistSans.variable} ${geistMono.variable} flex sm:flex-row flex-col sm:gap-9 antialiased p-8 sm:p-14 2xl:p-18 2xl:gap-12`}
       >
         <header>
           <Nav />
