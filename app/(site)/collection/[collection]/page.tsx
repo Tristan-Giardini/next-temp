@@ -4,12 +4,12 @@ import Image from "next/image";
 import Fancybox from "@/app/components/Fancybox";
 import ScrollToTop from "@/app/components/ScrollToTop";
 
-export default async function Collection({
-  params,
-}: {
-  params: { [key: string]: string };
-}) {
-  const collection = await getCollection(params.collection);
+type Props = {
+  params: Promise<{ collection: string }>;
+};
+
+export default async function Collection({ params }: Props) {
+  const collection = await getCollection((await params).collection);
 
   return (
     <div className="flex flex-col items-center gap-10">
