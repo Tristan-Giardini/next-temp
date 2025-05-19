@@ -53,7 +53,9 @@ export default function Nav() {
     return (
       <nav className="relative">
         <div className="flex justify-between items-center">
-          <Link href="/">Rebecca Storm</Link>
+          <Link href="/" className="font-bold no-hover">
+            Rebecca Storm
+          </Link>
           <button
             className="sm:hidden p-2 rounded z-50 relative w-8 h-8"
             disabled
@@ -68,7 +70,7 @@ export default function Nav() {
   return (
     <nav className="relative h-[20vh] sm:flex sm:flex-col sm:gap-6">
       <div className="flex justify-between items-center min-w-[240px]">
-        <Link href="/" className="font-bold">
+        <Link href="/" className="font-bold no-hover">
           Rebecca Storm
         </Link>
         <button

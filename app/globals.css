@@ -8,7 +8,7 @@ div.fancybox__toolbar__column.is-right > :nth-child(-n + 4) {
   display: none;
 }
 
-.fancybox__footer {
+.f-thumbs.fancybox__thumbs.is-modern.is-ltr.is-horizontal {
   display: none;
 }
 
@@ -22,6 +22,14 @@ li,
 span,
 a {
   font-size: 18px;
+}
+
+a:hover {
+  color: grey;
+}
+
+.no-hover:hover {
+  color: black;
 }
 
 @media screen and (max-width: 1536px) {
